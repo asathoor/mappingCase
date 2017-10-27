@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leaflet Tutorial</title>
+<meta name="generator" content="Bluefish 2.2.9" >
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!-- leaflet links, scripts -->
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+   integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+   crossorigin=""/>
+   
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+   integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+   crossorigin=""></script>
+
+<!-- finally: your styles -->
+<style>
+
+div {
+	margin: 7px;
+}
+
+#mapid { 
+	height: 320px; 
+	}
+
+</style>
+
+
+</head>
+
+<!-- here comes the map -->
+<div id="mapid"></div>
+
+<div>
+	Leaflet map from 
+	<a href="http://leafletjs.com/examples/quick-start/">this</a> tutorial.
+</div>
+
+<div>
+
+Now try to add:
+
+	<ul>
+		<li> Images </li>
+		<li> Polygons </li>
+		<li> (click) Events </li>
+		<li> Feel free to 
+			<a href="http://leafletjs.com/reference-1.2.0.html">experiment with this API</a> </li>
+	</ul>
+
+</div>
+
+<div>
+
+	Last but not least: create a map. Let the map focus on the town where you were born, or grew up. Mark the house with a circle.
+
+</div>
+
+
+<!-- leaflet script -->
+<script>
+	// save the position in vars
+	var lat = 56.08; // north - south
+	var lng = 10.24; // east - west
+	var zoom = 12;
+
+	var mymap = L.map('mapid').setView([ lat , lng ], zoom ); // Moesgaard lat, long, zoom
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+</script>
+
+<body>
+
+
+</body>
+</html>

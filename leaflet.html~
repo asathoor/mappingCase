@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leaflet test</title>
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+	   integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+	   crossorigin=""/>
+	   
+	   
+	<style>
+		#mapid { height: 500px; 
+			width: 500px;
+			border: 1px solid silver;		
+		}	
+	</style>
+
+</head>
+<body>
+
+<!-- the map -->
+<div id="mapid"></div>
+
+<p>
+	<a href="http://leafletjs.com/examples/quick-start/" target="_blank">Leaflet samples</a>.
+</p>
+
+<!-- leaflet scripts -->
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+   integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+   crossorigin=""></script>
+
+<!-- set up a map -->
+<script>
+	var mymap = L.map('mapid').setView([56.09, 10.19], 10);
+
+	// the mapbox tile layer	
+	L.tileLayer('https://api.mapbox.com/styles/v1/asathoor/cj2zuog5p000a2roeqtae1psj/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYXNhdGhvb3IiLCJhIjoiY2oyd3hlbzU3MDA5NzJxbm9iMjczanJndCJ9.HahDB7Z1rrD5THIYQh6t4g', {
+	    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+	    maxZoom: 18
+	}).addTo(mymap);
+
+	// a marker layer
+	var marker = L.marker([56.09, 10.19]).addTo(mymap);	
+
+	// a pop up for the marker
+	marker.bindPopup('<b>Come and see!</b><br>I am <a href="http://www.multimusen.dk" target="_blank">link</a> in a popup.'); // .openPopup();
+
+</script>
+
+</body>
+</html>
