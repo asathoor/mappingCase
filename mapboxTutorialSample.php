@@ -33,13 +33,13 @@
 /**
  * add the Mapbox style to the var below:
  **/
-var myStyle = "mapbox://styles/asathoor/cj99nerx33gsa2so3hswvd5ag";
+var myStyle = "ADD-THE-LINK-TO-THE-MAP-HERE";
 
 /**
  * From the Mapbox tutorial
  * The map will center, zoom etc. as in your style on Mapbox
  **/
-mapboxgl.accessToken = 'pk.eyJ1IjoiYXNhdGhvb3IiLCJhIjoiY2oyd3hlbzU3MDA5NzJxbm9iMjczanJndCJ9.HahDB7Z1rrD5THIYQh6t4g';
+mapboxgl.accessToken = 'PASTE-YOUR-TOKEN-HERE';
 var map = new mapboxgl.Map({
 container: 'map',
 style: myStyle
