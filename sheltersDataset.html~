@@ -13,7 +13,7 @@
 			background-color: #000;
 			color: #fff;
 			font-family: sans-serif;
-			margin: 7em;
+			margin: 2em;
 		}
 		a {
 			color: silver;		
