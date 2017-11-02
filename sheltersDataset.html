@@ -66,9 +66,10 @@
 
 <!-- set up a map -->
 <script>
+	// Geographical position and zoomlevel
 	var mymap = L.map('mapid').setView([56.11, 10.15], 12);
 
-	// use the Leaflet link from "Develop with this style"
+	// use the Leaflet link from "Develop with this style" in Mapbox Studio
 	var tile = 'https://api.mapbox.com/styles/v1/asathoor/cj9hej7ul20962snla7i0jxq1/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYXNhdGhvb3IiLCJhIjoiY2oyd3hlbzU3MDA5NzJxbm9iMjczanJndCJ9.HahDB7Z1rrD5THIYQh6t4g';
 
 	// the mapbox tile layer	
@@ -76,8 +77,6 @@
 	    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
 	    maxZoom: 18
 	}).addTo(mymap);
-
-	// Add Leaflet functionality, such as markers, pop ups, icons etc.
 
 	// a marker layer
 	var marker = L.marker([56.11, 10.15]).addTo(mymap);	
