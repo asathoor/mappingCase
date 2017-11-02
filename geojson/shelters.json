@@ -1,0 +1,26 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Shelter i Gjellerup Skov" }, "geometry": { "type": "Point", "coordinates": [ 10.142253, 56.150408 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Shelter i Hørhaven i skoven" }, "geometry": { "type": "Point", "coordinates": [ 10.22718, 56.11467 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Shelter i Lisbjerg gammel skov" }, "geometry": { "type": "Point", "coordinates": [ 10.16946, 56.235431 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Shelter ved Moesgård Strand" }, "geometry": { "type": "Point", "coordinates": [ 10.244415, 56.088373 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Shelter i Mollerup Skov" }, "geometry": { "type": "Point", "coordinates": [ 10.202737, 56.206293 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Shelter i Hørhaven på bakken" }, "geometry": { "type": "Point", "coordinates": [ 10.229495, 56.11288 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Shelter på Vestereng" }, "geometry": { "type": "Point", "coordinates": [ 10.183249, 56.186809 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Shelter i Moesgård Skov" }, "geometry": { "type": "Point", "coordinates": [ 10.232839, 56.097863 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Dagshelter i Hørhaven" }, "geometry": { "type": "Point", "coordinates": [ 10.230217, 56.113568 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Shelter i Vilhelmsborg Skov" }, "geometry": { "type": "Point", "coordinates": [ 10.197506, 56.066575 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Shelter i Brendstrup Skov" }, "geometry": { "type": "Point", "coordinates": [ 10.161816, 56.184156 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Madpakkehus Alfa i Skjoldhøjkilen" }, "geometry": { "type": "Point", "coordinates": [ 10.133973, 56.169204 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Madpakkehus Gamma i Skjoldhøjkilen" }, "geometry": { "type": "Point", "coordinates": [ 10.124992, 56.169994 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Madpakkehus Delta i Skjoldhøjkilen" }, "geometry": { "type": "Point", "coordinates": [ 10.111871, 56.171274 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Madpakkehus Epsilon i Skjoldhøjkilen" }, "geometry": { "type": "Point", "coordinates": [ 10.104946, 56.171661 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Shelterplads ved Egå Engsø - fem stk." }, "geometry": { "type": "Point", "coordinates": [ 10.220277, 56.213604 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Shelterplads i Lisbjerg ny skov - fem stk." }, "geometry": { "type": "Point", "coordinates": [ 10.171774, 56.226818 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Madpakkehus i Æblehaven" }, "geometry": { "type": "Point", "coordinates": [ 10.230176, 56.239258 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Shelter ved Mariendal Strand" }, "geometry": { "type": "Point", "coordinates": [ 10.267364, 56.051977 ] } },
+{ "type": "Feature", "properties": { "Bookbar": "Ja", "Type": "Shelters", "Navn": "Åbo Skov, 2 shelters" }, "geometry": { "type": "Point", "coordinates": [ 10.020934, 56.128332 ] } }
+]
+}
