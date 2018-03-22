@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox</title>
+    
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+
+<style>
+    #map {
+        height: 234px;
+        width: 100%;
+    }
+    
+</style>
+    
+</head>
+<body>
+   
+  
+   
+   
+<!-- the map will be here -->
+<section>
+<div id='map'></div>
+<h2>Mapbox: Ringvej Syd 104</h2>
+</section>
+
+<!-- mapbox -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+
+<!-- the map settings -->
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYXNhdGhvb3IiLCJhIjoiY2oyd3hlbzU3MDA5NzJxbm9iMjczanJndCJ9.HahDB7Z1rrD5THIYQh6t4g';
+var map = new mapboxgl.Map({
+    container: 'map', // the container id
+    style: 'mapbox://styles/asathoor/cjf0xhopv6igp2rmpgtm8f0sl', // your style
+    center: [10.15032, 56.11713], // Aarhus (or somewhere else)
+    zoom: 15, // zoom
+    pitch: 5, // skew
+    bearing: -12 // rotation
+});
+  
+    
+/**
+ * Add a layer: 3D buildings
+ **/
+    
+    
+// The 'building' layer in the mapbox-streets vector source contains building-height
+// data from OpenStreetMap.
+map.on('load', function() {
+    // Insert the layer beneath any symbol layer.
+    var layers = map.getStyle().layers;
+
+    var labelLayerId;
+    for (var i = 0; i < layers.length; i++) {
+        if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
+            labelLayerId = layers[i].id;
+            break;
+        }
+    }
+
+    map.addLayer({
+        'id': '3d-buildings',
+        'source': 'composite',
+        'source-layer': 'building',
+        'filter': ['==', 'extrude', 'true'],
+        'type': 'fill-extrusion',
+        'minzoom': 15,
+        'paint': {
+            'fill-extrusion-color': '#ff3300',
+
+            // use an 'interpolate' expression to add a smooth transition effect to the
+            // buildings as the user zooms in
+            'fill-extrusion-height': [
+                "interpolate", ["linear"], ["zoom"],
+                15, 0,
+                15.52, ["get", "height"]
+            ],
+            'fill-extrusion-base': [
+                "interpolate", ["linear"], ["zoom"],
+                15, 0,
+                15.05, ["get", "min_height"]
+            ],
+            'fill-extrusion-opacity': .3
+        }
+    }, labelLayerId);
+});
+
+/**
+* Marker, simple
+**/
+var marker = new mapboxgl.Marker()
+.setLngLat([10.15032, 56.11713])
+.addTo(map);
+    
+    
+    
+    
+    
+</script>
+</body>
+</html>
