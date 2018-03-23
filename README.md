@@ -10,12 +10,16 @@ Use the *Mapbox Studio* in order to create your design.
 
 A very basic implementation of a Mapbox design is:
 
+
+From the `<head>` section:
+
 ~~~~
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
 ~~~~
 
+And from the `<body>` section:
 
-
+~~~~
 <div id='map' style='width: 400px; height: 300px;'></div>
 
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
@@ -26,7 +30,7 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/streets-v9'
 });
 </script>
-
+~~~~
 
 ### Optional
 
