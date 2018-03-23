@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8' />
+	<title>Change a MapBox map's style</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<style>
+		#map {
+			position: absolute;
+			width: 100%;
+		}
+
+		/*.mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;*/
+
+	</style>
+
+
+</head>
+
+<body>
+
+
+	<div class="site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header class="masthead">
+			<img src="mapbox.png">
+			<p class="site-title">MapBox Example</p>
+			<p class="site-description">April 3-9, Aarhus, Denmark | #BAAA</p>
+
+
+
+		</header>
+		<!-- .masthead -->
+
+		<h1 class="page-title">Tuesday, April 3rd</h1>
+
+		<main id="content" class="main-content">
+			<ul class="schedule-list">
+				<li>
+					<h2 class="talk-title">INTRO FOR ALL</h2>
+					<p class="talk-speaker">Per and Jonna</p>
+					<p class="talk-time">8:30 am</p>
+				</li>
+				<li>
+					<h2 class="talk-title">MapBox Changes Everything (About Web Layouts)</h2>
+					<p class="talk-speaker">XC: Kim Elkjær Marcher-Jepsen</p>
+					<p class="talk-speaker">DE: Per Thykjær Jensen</p>
+					<p class="talk-time">9:45 am</p>
+				</li>
+				<li>
+					<h2 class="talk-title">Lunch</h2>
+					<p class="talk-speaker">All</p>
+					<p class="talk-time">12:00 pm</p>
+				</li>
+				<li class="lunch">
+					<h2 class="talk-title">Back from Lunch</h2>
+					<p class="talk-time">12:30 pm</p>
+				</li>
+				<li>
+					<h2 class="talk-title">Lightning works - Be inspired</h2>
+					<p class="talk-speaker">All Teams</p>
+					<p class="talk-time">12:30 pm</p>
+				</li>
+				<li>
+					<h2 class="talk-title">Q&amp;A</h2>
+					<p class="talk-speaker">XC: Kim and Niels Erik</p>
+					<p class="talk-speaker">DE: Per and Jonna</p>
+					<p class="talk-time">14:00 pm</p>
+				</li>
+			</ul>
+		</main>
+
+		<aside class="sidebar">
+			<ul class="info">
+				<li class="a11y">
+					<h2 class="info-heading">Accessibility and Inclusivity</h2>
+				</li>
+				<li class="coc">
+					<h2 class="info-heading">Code of Conduct</h2>
+				</li>
+				<li class="contact">
+					<h2 class="info-heading">Contact</h2>
+				</li>
+				<li class="faq">
+					<h2 class="info-heading">Frequently Asked Questions</h2>
+				</li>
+
+			</ul>
+
+		</aside>
+
+
+		<footer class="colophon">
+			<h2>Location:</h2>
+			<address>Room 1.38-1.39 <br />
+			<h2>Business Academy Aarhus</h2> <br />
+        Ringvej Syd 104, 8260 Viby J <br />
+       
+      </address>
+
+		</footer>
+
+	</div>
+	<section class="mapbox">
+		<div id='map' style='width: 100%; height: 100%;'></div>
+		<script>
+			mapboxgl.accessToken = 'pk.eyJ1Ijoia2ltc3RlciIsImEiOiJjamYweHMyaGIwbThqMnhwZDU2c2lrY2xxIn0.6fjT3-F4MhPBisZ4TNDOuA';
+			var map = new mapboxgl.Map({
+				container: 'map',
+				style: 'mapbox://styles/kimster/cjf10v6746lt62sliud40d0e8',
+				center: [10.1499006, 56.1172206],    
+				pitch: 30, 
+    			bearing: -30, 
+				zoom: 13
+			});
+			var marker = new mapboxgl.Marker()
+				.setLngLat([10.1499006, 56.1172206])
+				.addTo(map);
+			map.addControl(new mapboxgl.FullscreenControl());
+
+		</script>
+		<script src="features.js"></script>
+	</section>
+</body>
