@@ -1,18 +1,33 @@
-# Open Street Map: Leaflet, Mapbox ...
+Mappingcase (Pro4)
+==================
 
-Case for the third semester Multimedia Design and Communication EXP / CNT.
+## Resources
 
-* [Leaflet Tutorial](http://leafletjs.com/examples/quick-start/)
-* [Leaflet Tutorials](http://leafletjs.com/examples.html)
-* [Mapbox](https://www.mapbox.com/)
-* [Mapbox samples](https://www.mapbox.com/mapbox-gl-js/example/simple-map/)
+Use the *Mapbox Studio* in order to create your design. 
 
-Create maps styled according to your design line, and use the maps on your web pages, e.g. stand alone landing pages or as custom pages in WordPress.
+* [Mapbox](https://mapbox.com/)
+* [Mapbox Samples](https://www.mapbox.com/mapbox-gl-js/example/set-popup/)
 
-# Open Data Aarhus
+A very basic implementation of a Mapbox design is:
 
-In the folder geojson you'll find the file shelters.json. The data from Open Data Aarhus (ODAA) is deprecated. See [this](http://multimusen.dk/2017/11/shelters-in-aarhus/) blog post.
+~~~~
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+~~~~
 
-# page-mmap.php
 
-This file is a WordPress custom page sample. 
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYXNhdGhvb3IiLCJhIjoiY2oyd3hlbzU3MDA5NzJxbm9iMjczanJndCJ9.HahDB7Z1rrD5THIYQh6t4g';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9'
+});
+</script>
+
+
+### Optional
+
+* [Leaflet](http://leafletjs.com/)
