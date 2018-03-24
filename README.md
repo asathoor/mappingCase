@@ -45,6 +45,18 @@ var map = new mapboxgl.Map({
 
 * [Follow these instructions](https://www.mapbox.com/install/js/cdn-install/)
 
-### Optional
+## A working sample
+
+* [index.html](https://github.com/asathoor/mappingCase/blob/master/index.html#L112-L131)
+
+
+### Optional Library: Leaflet
+
+Leaflet is a library that can help you to enhance your maps add layers to your map via JavaScript.
 
 * [Leaflet](http://leafletjs.com/)
+
+With Leaflet you can even work with imaginary maps, say Tolkien's middle earth or similar.
+
+* [Leaflet: Imaginary Maps](http://leafletjs.com/examples/crs-simple/crs-simple.html)
+* [Leaflet: Geojson](http://leafletjs.com/examples/geojson/)
