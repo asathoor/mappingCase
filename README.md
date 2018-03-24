@@ -1,9 +1,9 @@
-Mappingcase (Pro4)
-==================
+Stories and Maps (Pro4)
+=======================
 
 ## Resources
 
-Use the *Mapbox Studio* in order to create your design. 
+Use the *Mapbox Studio* in order to style your map:
 
 * [Mapbox](https://mapbox.com/)
 * [Mapbox Samples](https://www.mapbox.com/mapbox-gl-js/example/set-popup/)
