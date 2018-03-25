@@ -2,26 +2,25 @@
  * file: flying.js
  * purpose: Mapbox map and interaction
  **/
+$(function() { /// doc ready
 
-// token
-mapboxgl.accessToken = 'pk.eyJ1IjoiYXNhdGhvb3IiLCJhIjoiY2oyd3hlbzU3MDA5NzJxbm9iMjczanJndCJ9.HahDB7Z1rrD5THIYQh6t4g';
+    // token
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYXNhdGhvb3IiLCJhIjoiY2oyd3hlbzU3MDA5NzJxbm9iMjczanJndCJ9.HahDB7Z1rrD5THIYQh6t4g';
 
-// draw the map
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/asathoor/cj9isv5ju3bhq2ro4pol6s2x6',
-    center: [-51.7216,64.1835], // aarhus
-    zoom: 2,
-    bearing: 56,
-    pitch: 0,
-    bearing: 0,
-    speed: 0.2
-});
+    // draw the map
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/asathoor/cj9isv5ju3bhq2ro4pol6s2x6',
+        center: [-51.7216,64.1835], // aarhus
+        zoom: 2,
+        bearing: 56,
+        pitch: 0,
+        bearing: 0,
+        speed: 0.2
+    });
 
-// Add zoom and rotation controls to the map.
-map.addControl(new mapboxgl.NavigationControl());
-
-$(function() { /// document ready
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl());
 
     $('#tekst').load('ajax/eaaa.html'); // load HTML by AJAX
 
@@ -41,7 +40,7 @@ $(function() { /// document ready
     $('#jsconf').click( function(){
        map.flyTo({
         center: [-21.93251,64.15032],
-        zoom: 16,
+        zoom: 17,
         bearing: -60,
         pitch: 84
         });
@@ -128,4 +127,5 @@ map.on('load', function() {
             'fill-extrusion-opacity': .6
         }
     }, labelLayerId);
-}); 
+    
+}); /// ends doc ready 
