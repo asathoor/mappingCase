@@ -18,6 +18,9 @@ var map = new mapboxgl.Map({
     speed: 0.2
 });
 
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl());
+
 $(function() { /// document ready
 
     $('#tekst').load('ajax/eaaa.html'); // load HTML by AJAX
@@ -51,7 +54,7 @@ $(function() { /// document ready
        map.flyTo({
         center: [20.961995,52.224503],
         zoom: 16,
-        bearing: -72,
+        bearing: 5,
         pitch: 45
         });
         

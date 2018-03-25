@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
+   <!--
+   This is a demo of:
+   
+   * Mapbox and jQuery
+   * jQuery AJAX .load( 'your-html' )
+   
+   Pros and cons:
+   
+   * Pro: it's easy and gives a modular code.
+   * Con: SEO engines cannot crawl your AJAX includes.
+   
+   So e.g. a PHP include is often the better solution.
+   -->
     <meta charset="UTF-8">
-    <title>Btn Fly</title>
+    <title>Rejser og konferencer</title>
     
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
     <link href='css/flying.css' rel='stylesheet' />
@@ -22,6 +35,7 @@
                 <div id="tekst"></div>   
             </nav>
     
+           <!-- kort indlæses her -->
             <div id="map"></div>
     </section>
     
