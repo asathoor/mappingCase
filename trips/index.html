@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Fly to a location based on scroll position</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        
+        h2 {
+            margin-left: 25px;
+            padding: 25px 25px;
+            color: #fff;
+        }
+        
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+
+        #map {
+            position: fixed;
+            width:50%;
+        }
+        #features {
+            width: 50%;
+            margin-left: 50%;
+            font-family: sans-serif;
+            overflow-y: scroll;
+            background-color: #000;
+            padding-bottom: 300px;
+        }
+        section {
+            padding:  25px 50px;
+            line-height: 25px;
+            border-bottom: 1px solid #ddd;
+            opacity: 0.90;
+            font-size: 13px;
+            background-color: #000;
+            color: antiquewhite;
+        }
+        section.active {
+            opacity: 1;
+            background-color: brown;
+            color: antiquewhite;
+        }
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 600px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id='map'></div>
+
+<div id='features'>
+   <h2>Rejser og konferencer</h2>
+    <section id='eaaa' class='active'>
+        <h3>Erhvervsakademi Aarhus</h3>
+        <ul>
+           <li>2017 - nu: udpeget til formand for lektorbedømmelsesudvalg. Fungerer som adjunktvejleder</li>
+            <li>2016-17: leder forskningsprojekt om WordPress</li>
+            <li>2014: ansat som underviser i programmering.</li>
+        </ul>
+    </section>
+    <section id='jsconf'>
+        <h3>2018: JsConf Reykjavik</h3>
+        <p>The JsConf in Reykjavik gave impressions of the latest trends in JavaScript.</p>
+    </section>
+    <section id='frontTrends'>
+        <h3>2017: Front Trends, Warsaw</h3>
+        <ul>
+            <li><a href="https://2017.front-trends.com/">Web: Front Trends May 24 - 27 2017</a></li>
+        </ul>
+        <p>"Front-Trends is one of Europe’s most established annual conferences for professional front-end developers to meet, learn and get inspired."</p>
+    </section>
+    <section id='regina'>
+        <h3>2016: Visiting Scholar University of Regina</h3>
+        <p>Besøger University of Regina som visiting scolar. Mødes med en række forskere og e-kunstnere.</p>
+        
+    </section>
+    <section id='summit'>
+        <h3>2014: Adobe Summit London</h3>
+        <ul>
+            <li><a href="https://www.gsb.stanford.edu/sites/gsb/files/conf-presentations/adobesummit.pdf">Adobe Summit May 14 - 15</a></li>
+            <li>Participated in a responsive workflow masterclass</li>
+        </ul>
+        <p>The Adobe conference was</p>
+    </section>
+</div>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYXNhdGhvb3IiLCJhIjoiY2oyd3hlbzU3MDA5NzJxbm9iMjczanJndCJ9.HahDB7Z1rrD5THIYQh6t4g';
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/asathoor/cj9isv5ju3bhq2ro4pol6s2x6',
+    center: [10.15043,56.11677],
+    zoom: 10,
+    bearing: 56,
+    pitch: 33
+});
+
+// object with places and geographic positions
+var chapters = {
+    'eaaa': {
+        bearing: 27,
+        center: [10.15043,56.11677],
+        zoom: 16,
+        pitch: 20
+    },
+    'jsconf': {
+        duration: 7000,
+        center: [-21.93251,64.15032],
+        bearing: 150,
+        zoom: 15,
+        pitch: 0
+    },
+    'frontTrends': {
+        bearing: 90,
+        center: [20.9599153, 52.224893],
+        zoom: 17,
+        speed: 0.6,
+        pitch: 40
+    },
+    'regina': {
+        bearing: 23,
+        center: [-104.5877,50.4153],
+        zoom: 14
+    },
+    'summit': {
+        bearing: -45,
+        center: [0.0300,51.5071],
+        zoom: 15.3,
+        pitch: 20,
+        speed: 0.5
+    }
+};
+
+    
+// On every scroll event, check which element is on screen
+window.onscroll = function() {
+    var chapterNames = Object.keys(chapters);
+    for (var i = 0; i < chapterNames.length; i++) {
+        var chapterName = chapterNames[i];
+        if (isElementOnScreen(chapterName)) {
+            setActiveChapter(chapterName);
+            break;
+        }
+    }
+};
+
+var activeChapterName = 'eaaa';
+    
+function setActiveChapter(chapterName) {
+    if (chapterName === activeChapterName) return;
+
+    map.flyTo(chapters[chapterName]);
+
+    document.getElementById(chapterName).setAttribute('class', 'active');
+    document.getElementById(activeChapterName).setAttribute('class', '');
+
+    activeChapterName = chapterName;
+}
+
+function isElementOnScreen(id) {
+    var element = document.getElementById(id);
+    var bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+   
+</script>
+
+</body>
+</html>
