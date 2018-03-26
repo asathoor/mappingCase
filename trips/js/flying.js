@@ -2,25 +2,27 @@
  * file: flying.js
  * purpose: Mapbox map and interaction
  **/
+
+// token
+mapboxgl.accessToken = 'pk.eyJ1IjoiYXNhdGhvb3IiLCJhIjoiY2oyd3hlbzU3MDA5NzJxbm9iMjczanJndCJ9.HahDB7Z1rrD5THIYQh6t4g';
+
+// draw the map
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/asathoor/cj9isv5ju3bhq2ro4pol6s2x6',
+    center: [-51.7216,64.1835], // aarhus
+    zoom: 2,
+    bearing: 56,
+    pitch: 0,
+    bearing: 0,
+    speed: 0.2,
+    hash: true
+});
+
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl());
+
 $(function() { /// doc ready
-
-    // token
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYXNhdGhvb3IiLCJhIjoiY2oyd3hlbzU3MDA5NzJxbm9iMjczanJndCJ9.HahDB7Z1rrD5THIYQh6t4g';
-
-    // draw the map
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/asathoor/cj9isv5ju3bhq2ro4pol6s2x6',
-        center: [-51.7216,64.1835], // aarhus
-        zoom: 2,
-        bearing: 56,
-        pitch: 0,
-        bearing: 0,
-        speed: 0.2
-    });
-
-    // Add zoom and rotation controls to the map.
-    map.addControl(new mapboxgl.NavigationControl());
 
     $('#tekst').load('ajax/eaaa.html'); // load HTML by AJAX
 
@@ -29,7 +31,7 @@ $(function() { /// doc ready
        map.flyTo({
         center: [10.15043,56.11677],
         zoom: 16,
-        bearing: 33,
+        bearing: 45,
         pitch: 45
         });
          
@@ -40,9 +42,9 @@ $(function() { /// doc ready
     $('#jsconf').click( function(){
        map.flyTo({
         center: [-21.93251,64.15032],
-        zoom: 17,
-        bearing: -60,
-        pitch: 84
+        zoom: 16,
+        bearing: -45,
+        pitch: 45
         });
         
         $('#tekst').load('ajax/jsconf.html'); // load HTML by AJAX
@@ -78,18 +80,15 @@ $(function() { /// doc ready
         center: [0.0300,51.5071],
         zoom: 13,
         bearing: 12,
-        pitch: 34
+        pitch: 45
         });
         
         $('#tekst').load('ajax/adobe.html'); // load HTML by AJAX
     });
 
- }); /// end doc ready func
+ });
 
 // 3D bygninger
-//
-// The 'building' layer in the mapbox-streets vector source contains building-height
-// data from OpenStreetMap.
 map.on('load', function() {
     // Insert the layer beneath any symbol layer.
     var layers = map.getStyle().layers;
@@ -127,5 +126,4 @@ map.on('load', function() {
             'fill-extrusion-opacity': .6
         }
     }, labelLayerId);
-    
-}); /// ends doc ready 
+}); 
