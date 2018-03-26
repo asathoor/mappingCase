@@ -49,6 +49,14 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoiYXNhdGhvb3IiLCJhIjoiY2oyd3hlbzU3MDA5NzJxbm9iMjczanJndCJ9.HahDB7Z1rrD5THIYQh6t4g';
 var map = L.mapbox.map('map', 'mapbox.streets')
     .setView([0,0], 2);
+
+map.addLayer({
+    "id": "hillshading",
+    "source": "dem",
+    "type": "hillshade"
+// insert below waterway-river-canal-shadow;
+// where hillshading sits in the Mapbox Outdoors style
+}, 'waterway-river-canal-shadow');
     
 $(function() {
     console.log( "jQuery ready!" );
