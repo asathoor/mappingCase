@@ -38,10 +38,24 @@
 
 <div id='map'></div>
 
+<!-- jQuery -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoiYXNhdGhvb3IiLCJhIjoiY2oyd3hlbzU3MDA5NzJxbm9iMjczanJndCJ9.HahDB7Z1rrD5THIYQh6t4g';
 var map = L.mapbox.map('map', 'mapbox.streets')
     .setView([0,0], 2);
+    
+$(function() {
+    console.log( "jQuery ready!" );
+    
+    
+});
+    
 </script>
 
 
