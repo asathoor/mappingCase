@@ -66,7 +66,7 @@ $(function() { /// doc ready
     $('#regina').click( function(){
        map.flyTo({
         center: [-104.5877,50.4153],
-        zoom: 14,
+        zoom: 15,
         bearing: 12,
         pitch: 45
         });
