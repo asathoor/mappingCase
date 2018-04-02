@@ -1,0 +1,34 @@
+body {
+    font-family: monospace;
+    background-color: #000;
+    color: #fff;
+}
+
+#map {
+    position: relative;
+    width: 75%;
+    height: 500px;
+    float: left;
+}
+
+nav {
+    position: relative;
+    width: 25%;
+    float: left;
+    background-color: #000;
+}
+    
+button:hover {
+    background-color: goldenrod;
+    display: block;
+    width: 100%;
+}
+
+button {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    height: 35px;
+    width: 100%;
+    display: block;
+}

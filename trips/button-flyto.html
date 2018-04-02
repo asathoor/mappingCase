@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+   <!--
+   This is a demo of:
+   
+   * Mapbox and jQuery
+   * jQuery AJAX .load( 'your-html' )
+   
+   Pros and cons:
+   
+   * Pro: it's easy and gives a modular code.
+   * Con: SEO engines cannot crawl your AJAX includes.
+   
+   So e.g. a PHP include is often the better solution.
+   -->
+    <meta charset="UTF-8">
+    <title>Rejser og konferencer</title>
+    
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='css/flying.css' rel='stylesheet' />
+    
+    
+</head>
+<body>
+    <section>        
+           <nav>
+                <button id="aarhus">Erhvervsakademi Aarhus</button> <br>
+                <button id="jsconf">2018: JsConf Reykjavik</button> <br>
+                <button id="frontTrends">2017: Front Trends Warsaw</button> <br>
+                <button id="regina">2016: University of Regina</button> <br>
+                <button id="summit">2014: Adobe Summit London</button>
+                
+                <!-- tekst indlæses her -->
+                <div id="tekst"></div>   
+            </nav>
+    
+           <!-- kort indlæses her -->
+            <div id="map"></div>
+    </section>
+    
+    <!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    
+    <!-- Mapbox -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>  
+
+    <!-- interactive map -->
+    <script src="js/flying.js"></script>
+
+</body>
+</html>
