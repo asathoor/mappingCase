@@ -7,7 +7,7 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
 
     <style>
-        #map {
+        #map,#map2 {
             height: 400px;
             width: 100%;
         }
@@ -20,6 +20,7 @@
 
     <!-- the map will be loaded to #map -->
     <div id='map'></div>
+    <div id='map2'></div>
     <h2>Mapbox: Ringvej Syd 104</h2>
     <p>
         <a href="https://www.mapbox.com/mapbox-gl-js/example/set-popup/">Examples</a>
@@ -33,11 +34,20 @@
 <!-- the map settings -->
 <script>
     
-    mapboxgl.accessToken = 'YOUR-TOKEN-GOES-HERE';
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYXNhdGhvb3IiLCJhIjoiY2oyd3hlbzU3MDA5NzJxbm9iMjczanJndCJ9.HahDB7Z1rrD5THIYQh6t4g';
 
     var map = new mapboxgl.Map({
         container: 'map', // the container id
-        style: 'mapbox://styles/asathoor/cjf0xhopv6igp2rmpgtm8f0sl', // your style
+        style: 'mapbox://styles/asathoor/cj9isv5ju3bhq2ro4pol6s2x6', // your style
+        center: [9.48067,55.24973], // Aarhus (or somewhere else)
+        zoom: 15, // zoom
+        pitch: 23, // skew
+        bearing: 180 // rotation
+    });
+    
+    var map2 = new mapboxgl.Map({
+        container: 'map2', // the container id
+        style: 'mapbox://styles/asathoor/cj9isv5ju3bhq2ro4pol6s2x6', // your style
         center: [10.15032, 56.11713], // Aarhus (or somewhere else)
         zoom: 15, // zoom
         pitch: 5, // skew
